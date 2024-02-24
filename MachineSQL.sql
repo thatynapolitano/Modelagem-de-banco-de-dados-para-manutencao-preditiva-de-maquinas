@@ -92,13 +92,14 @@ select  datetime, machineid as machineID, volt, rotate, pressure, vibration from
 
 
 ---Qual modelo de máquina apresenta mais falhas?
-SELECT mo.modelType, COUNT(*) AS num_failures
-FROM public.Failure f
-INNER JOIN public.Machine ma ON f.machineID = ma.machineID
-INNER JOIN public.Model mo ON ma.modelID = mo.modelID
+SELECT mo.modelType, COUNT(f.machineID) AS total_failures
+FROM public.Model mo
+JOIN public.Machine ma ON mo.modelID = ma.modelID
+JOIN public.Failure f ON ma.machineID = f.machineID
 GROUP BY mo.modelType
-ORDER BY num_failures DESC
+ORDER BY total_failures DESC
 LIMIT 1;
+
 
 ---Qual a quantidade de falhas por idade da máquina?
 SELECT ma.age, COUNT(*) AS num_failures
@@ -109,12 +110,11 @@ ORDER BY ma.age;
 
 
 --Qual componente apresenta maior quantidade de falhas por máquina?
-SELECT ma.machineID, c.componentType, COUNT(*) AS num_failures
-FROM public.Failure f
-INNER JOIN public.Machine ma ON f.machineID = ma.machineID
-INNER JOIN public.Component c ON f.componentID = c.componentID
-GROUP BY ma.machineID, c.componentType
-ORDER BY ma.machineID, num_failures DESC
+SELECT c.componentType, COUNT(f.componentID) AS total_failures
+FROM public.Component c
+JOIN public.Failure f ON c.componentID = f.componentID
+GROUP BY c.componentType
+ORDER BY total_failures DESC
 LIMIT 1;
 
 
@@ -133,6 +133,7 @@ INNER JOIN public.Model mo ON ma.modelID = mo.modelID
 INNER JOIN public.ErrosTipo et ON e.errorID = et.errosID
 GROUP BY mo.modelType, et.errostipoID
 ORDER BY mo.modelType, num_errors DESC;
+
 
 
 
