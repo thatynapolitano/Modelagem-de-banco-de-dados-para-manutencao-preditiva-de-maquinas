@@ -16,7 +16,7 @@ O presente projeto possui o objetivo de fazer uma modelagem de banco de dados pa
 - <b>Metadata of Machines (PdM_Machines.csv)</b>: Tipo de modelo e idade das Máquinas.
 
 
-<h3>Modelo de dados:</h3>
+<h3>Modelo de dados</h3>
 
 No primeiro momento tínhamos um modelo de dados com cinco tabelas:
 Telemetry, Errors, Maint, Failures e Machines. 
@@ -25,7 +25,7 @@ Telemetry, Errors, Maint, Failures e Machines.
 
 Para a criação de uma modelagem de dados eficiente houve a normalização de banco de dados respeitando a Terceira Forma Normal (3NF), pois no modelo original as dependências transitivas são consideradas indesejáveis porque podem levar a redundância de dados e anomalias de atualização. Quando um banco de dados está na 3NF, significa que essas dependências transitivas foram eliminadas.
 
-![Modelo de dados normalizado](./Modelo%20não%20normalizado.png)
+![Modelo de dados normalizado](./Modelo%20normalizado.png)
 
 <h3>Perguntas de negócio para as querys:</h3>
 
