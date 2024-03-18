@@ -35,7 +35,7 @@ Para a criação de uma modelagem de dados eficiente houve a normalização de b
 4. A média da idade das máquinas por modelo.<br>
 5. Quantidade de erro por tipo de erro e modelo da máquina.<br>
 
-<h3>Considerações finais</h3>
+<h3>Considerações finais:</h3>
 
 Para solução do problema, em termos técnicos, levamos em consideração para a criação da Entidade-Relacionamento (ER) o respeito das formas normais: 1FN, 2FN e 3FN para criar novas tabelas e colunas com maior detalhamento do problema.
 Na visão de negócio, considera-se para maior entendimento dos dados atualmente em nossa base para a manutenção preditiva de máquinas, a criação de um modelo de dados que inserisse contexto mais detalhado do negócio para que seja possível extrair as informações completas, gerar conhecimento e permitir insights para a tomada de decisão. 
