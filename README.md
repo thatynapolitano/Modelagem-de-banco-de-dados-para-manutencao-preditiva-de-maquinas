@@ -16,7 +16,7 @@ O presente projeto possui o objetivo de fazer uma modelagem de banco de dados pa
 - <b>Metadata of Machines (PdM_Machines.csv)</b>: Tipo de modelo e idade das Máquinas.
 
 
-<h3>Modelo de dados</h3>
+<h3>Modelo de dados:</h3>
 
 No primeiro momento tínhamos um modelo de dados com cinco tabelas:
 Telemetry, Errors, Maint, Failures e Machines. 
